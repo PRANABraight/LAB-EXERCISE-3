@@ -35,3 +35,11 @@ h2 {
 .text-center {
     text-align: center;
 }
+
+.nav-item:hover{
+    
+    border: 1px solid white;
+    border-radius: 5px;
+    
+    
+}

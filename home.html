@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--fontawesome-->
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     rel="stylesheet"
@@ -13,6 +15,8 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
+   
     <title>LearnSphere</title>
     <style>
         .logo {
@@ -20,23 +24,33 @@
             align-items: center;
             font-family: Arial, sans-serif;
         }
-        .logo svg {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
+       
         .logo-text {
             font-size: 24px;
             font-weight: bold;
         }
+        nav{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: whitesmoke;
+        }
+        
+        body{
+            background-color: whitesmoke;
+        }
         main {
             margin-top: 3rem;
             padding: 0 5rem;
+           
+        }
+        .container, #CarousalDemo, .carousal-inner,.carousal-item
+        {
+            width: 100%;
         }
 
         .carousel-item img {
-            height: 60vh;
+            height: 75vh;
             object-fit: cover;
+            
         }
 
         .courses {
@@ -50,6 +64,18 @@
             padding: 1rem 1rem;
             grid-column: span 2;
         }
+
+        .nav-item:hover{
+    
+            border: 1px solid white;
+            border-radius: 5px;
+                       
+            
+        }
+        .courses:hover{
+            background-color: white;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -57,17 +83,17 @@
 
     <nav class="navbar navbar-light bg-primary navbar-expand-md fixed-top">
         <a href="home.html" class="navbar-brand text-white">
+            
+              <!--svg-->
             <div class="logo">
-                <svg width="100" height="100" viewBox="0 0 100 100">
-                    <!-- Circle background -->
-                    <circle cx="50" cy="50" r="48" stroke="black" stroke-width="2" fill="00000" />
-                  
-                    <!-- Triangle arrow -->
-                    <polygon points="50,15 30,50 70,50" fill="#ffffff" />
-                  
-                    <!-- Text -->
-                    <text x="50" y="80" font-family="Arial" font-size="15" text-anchor="middle" fill="#ffffff">1MCA A</text>
-                  </svg>
+                <svg width="50" height="50" >
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 20.2000%; overflow: hidden;
+                    border-radius: 100px; will-change: transform;">
+                     <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGMZvUx5ZY&#x2F;2AxAi0KOsSKmjHn_uq1ptw&#x2F;view?embed" >
+                     </iframe>
+                   </div>
+                </svg>
                 <div class="logo-text">LearnSphere</div>
             </div>
         
@@ -78,13 +104,13 @@
         <div class="collapse navbar-collapse justify-content-end align-center" id="navbarCollapse">
             <ul class="navbar-nav ml-auto px-5" style="text-align: center;">
                 <li class="nav-item px-2">
-                    <a href="home.html" class="nav-link text-white"><i class="fas fa-house"></i></a>
+                    <a href="home.html" class="nav-link text-white " ><i class="fas fa-house"></i> Home</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="login.html" class="nav-link text-white"><i class="fas fa-user"></i></a>
+                    <a href="login.html" class="nav-link text-white"><i class="fas fa-user"></i> Log in</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="about_us.html" class="nav-link text-white"><i class="fas fa-circle-info"></i></a>
+                    <a href="about_us.html" class="nav-link text-white"><i class="fas fa-circle-info"></i> About</a>
                 </li>
                 <li><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button></li>
             </ul>
@@ -101,7 +127,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Best Education for all at LearnSphere</p>
+                    <p>LearnSphere; learning made fun..</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
