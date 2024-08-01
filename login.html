@@ -85,19 +85,16 @@
                 <li class="nav-item px-2">
                     <a href="home.html" class="nav-link text-white " ><i class="fas fa-house"></i> Home</a>
                 </li>
-                <li class="nav-item px-2">
-                    <a href="login.html" class="nav-link text-white"><i class="fas fa-user"></i> Log in</a>
-                </li>
+                
                 <li class="nav-item px-2">
                     <a href="about_us.html" class="nav-link text-white"><i class="fas fa-circle-info"></i> About</a>
                 </li>
-                
+                <li><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button></li>
             </ul>
         </div>
     </nav>
 
-
-    
+<!--login-->
     <div class="container ">
         <h2 class="text-center mb-4">Login</h2>
         <form>
@@ -131,6 +128,73 @@
             </div>
         </form>
     </div>
+
+      <!--modal-->
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    
+              <!--svg-->
+            <div class="logo">
+                <svg width="50" height="50" >
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 20.2000%; overflow: hidden;
+                    border-radius: 100px; will-change: transform;">
+                     <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGMZvUx5ZY&#x2F;2AxAi0KOsSKmjHn_uq1ptw&#x2F;view?embed" >
+                     </iframe>
+                   </div>
+                </svg>
+                <div class="logo-text">LearnSphere</div>
+            </div>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form>
+                        <div class="form-group row mb-3">
+                            <label class="col-sm-3 col-form-label" for="email">Email Address</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" placeholder="username@gmail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row mb-3">
+                            <label class="col-sm-3 col-form-label" for="password">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group row mb-4">
+                            <label class="col-sm-3 col-form-label" for="agree">Agree to all the agreements</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" class="form-check-input" id="agree">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
