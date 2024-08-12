@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Osm-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!--Font-Awesome-->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="login.css">
+    <title>LearnSphere</title>
+    <style>
+        .container {
+        height: 60vh;
+        width: 100vw;
+        position: relative;
+        object-fit: cover;
+        padding: 0;
+        border-radius: 10px;
+        box-shadow:0 5 7 black ;
+        }
+
+        #map {
+        height: 100%; 
+        width: 100%; 
+         border-radius: 10px;
+        }
+
+        .loc {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        }
+       
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: whitesmoke;
+        }
+        .container{
+            height: 60vh;
+            width: 100vw;
+            object-fit: cover;
+            display: grid;
+            
+            
+
+        }
+        main {
+            margin-top: 3rem;
+            padding: 0 5rem;
+        }
+    </style>
+   
+</head>
+<body>
+    <nav class="navbar navbar-light bg-primary navbar-expand-md fixed-top">
+        <a href="home.html" class="navbar-brand text-white">
+            
+              <!--svg-->
+            <div class="logo">
+                <svg width="50" height="50" >
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 20.2000%; overflow: hidden;
+                    border-radius: 100px; will-change: transform;">
+                     <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGMZvUx5ZY&#x2F;2AxAi0KOsSKmjHn_uq1ptw&#x2F;view?embed" >
+                     </iframe>
+                   </div>
+                </svg>
+                <div class="logo-text">LearnSphere</div>
+            </div>
+        
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end align-center" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto px-5" style="text-align: center;">
+                <li class="nav-item px-2">
+                    <a href="home.html" class="nav-link text-white " ><i class="fas fa-house"></i> Home</a>
+                </li>
+                
+                <li class="nav-item px-2">
+                    <a href="about_us.html" class="nav-link text-white"><i class="fas fa-circle-info"></i> About</a>
+                </li>
+
+                <li class="nav-item px-2">
+                    <a href="login.html" class="nav-link text-white"><i class="fas fa-user"></i> Log in</a>
+                </li>
+                <li><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal">Sign Up</button></li>
+            </ul>
+        </div>
+    </nav>
+
+  <!--modal sign up-->
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    
+              <!--svg-->
+            <div class="logo">
+                <svg width="50" height="50" >
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 20.2000%; overflow: hidden;
+                    border-radius: 100px; will-change: transform;">
+                     <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGMZvUx5ZY&#x2F;2AxAi0KOsSKmjHn_uq1ptw&#x2F;view?embed" >
+                     </iframe>
+                   </div>
+                </svg>
+                <div class="logo-text">LearnSphere</div>
+            </div>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form>
+                        <div class="form-group row mb-3">
+                            <label class="col-sm-3 col-form-label" for="email">Email Address</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" placeholder="username@gmail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row mb-3">
+                            <label class="col-sm-3 col-form-label" for="password">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group row mb-4">
+                            <label class="col-sm-3 col-form-label" for="agree">Agree to all the agreements</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" class="form-check-input" id="agree">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="map">
+    <h1 class="lead " style="font-family:sans-serif;">Meet Us At</h1>
+    <!--OSM-->
+
+    <div class="container " style="background-color:aliceblue; margin-bottom: 1rem ;">
+        <div class="loc">
+            <p style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Timestamp: <span id="timestamp"></span></p>
+            <p style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Latitude : <span id="latitude"></span></p>
+            <p style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Longitude: <span id="longitude"></span></p>
+            <p style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Accuracy : <span id="accuracy"></span></p>
+            <button id="clickme" class="btn btn-light text-primary border-primary">Click Here</button>
+            <div id="errorArea" class="alert d-none"></div>
+        </div>
+        <div id="map"></div>
+    <!-- <a href="https://www.openstreetmap.org/?mlat=12.93432&mlon=77.60535#map=19/12.93432/77.60535"> Click For Map</a> -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        let getloc=document.getElementById("clickme");
+        getloc.addEventListener('click',event=>{
+            if('geolocation' in navigator){
+                navigator.geolocation.getCurrentPosition(pos=>{
+                    document.getElementById("timestamp").innerText=new Date(pos.timestamp);
+                    document.getElementById("latitude").innerText=pos.coords.latitude;
+                    document.getElementById("longitude").innerText=pos.coords.longitude;
+                    document.getElementById("accuracy").innerText=pos.coords.accuracy;
+                   
+
+                    // Display the map
+                    var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 13);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+                    L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
+                        .bindPopup('LearnSphere')
+                        .openPopup();
+
+                    document.getElementById("map").classList.remove("d-none");
+
+                },error=>{
+                    let msg="";
+                    switch(error.code){
+                        case error.PERMISSION_DENIED:
+                            msg="User Denied Permission";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            msg="Can't Locate User's Position";
+                            break;
+                        case error.TIMEOUT:
+                            msg="Time out";
+                            break;
+                    }
+                 let errorArea=document.getElementById("errorArea");
+                 errorArea.innerHTML=msg;
+                 errorArea.classList.remove("d-none");
+
+
+                })
+
+            }else{
+                console.log("Update your browser to get Geolocation Object");
+            }
+
+        })
+    </script>
+
+</div>
+
+    
+       <div class="google" style="display: flexbox; justify-content: center;">
+
+        <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#myModal1" >View Google Map</button>
+
+        <!--modal map-->
+
+   <div class="modal fade" id="myModal1">
+       <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title">
+                       
+             <!--svg-->
+           <div class="logo">
+               <svg width="50" height="50" >
+                   <div style="position: relative; width: 100%; height: 0; padding-top: 20.2000%; overflow: hidden;
+                   border-radius: 100px; will-change: transform;">
+                    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGMZvUx5ZY&#x2F;2AxAi0KOsSKmjHn_uq1ptw&#x2F;view?embed" >
+                    </iframe>
+                  </div>
+               </svg>
+               <div class="logo-text">LearnSphere</div>
+           </div>
+                 
+                   </h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal">
+                      
+                   </button>
+               </div>
+               <div class="modal-body">
+                   
+                       <h2 class="text-center mb-4">Google Maps</h2>
+                      <!--google map-->
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5845191752337!2d77.6036060749177!3d12.934404087377578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15392f6ea2f9%3A0x851befe3b3f1d0b0!2sCentral%20Campus%2C%20Christ%20University!5e0!3m2!1sen!2sin!4v1722619774644!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                   
+               </div>
+               <div class="modal-footer">
+                  
+                    <a href=" https://www.google.com/maps/place/Central+Campus,+Christ+University/@12.934404,77.606181,16z/data=!4m6!3m5!1s0x3bae15392f6ea2f9:0x851befe3b3f1d0b0!8m2!3d12.934404
+                    1!4d77.606181!16s%2Fg%2F11ptydh15q?hl=en&entry=ttu" target="_blank">
+                        <button class="btn btn-light border-primary text-primary">View on Google Maps</button>
+                    </a>
+                   <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+       </div>
+    </main>
+
+    <footer class="footer bg-light fixed-bottom" style="text-align: center; color: blue;">
+        <div>
+            <p>&copy; LearnSphere. All rights reserved. <br> PRANAB RAI</p>
+        </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
